@@ -233,7 +233,7 @@ a:active {
     }
 
     .scale-wrapper {
-        height: 550px;
+        height: 1550px;
     }
 }
 
@@ -445,7 +445,7 @@ a:active {
 
 
 
-@media (max-width: 1080px) {
+@media (max-width: 1800px) {
     .container3 {
         transform: scale(0.7);
     }

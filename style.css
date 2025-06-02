@@ -438,7 +438,7 @@ a:active {
     min-height: 100vh;
 }
 .scale-wrapper {
-    height: auto;
+    height: 50vh;
     min-height: 100vh;
 }
 
@@ -446,8 +446,3 @@ a:active {
     .container3 {
         transform: scale(0.7);
     }
-
-    .scale-wrapper {
-        height: 100vh;
-    }
-}

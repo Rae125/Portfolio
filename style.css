@@ -156,7 +156,7 @@ a:active {
 .scale-wrapper {
     width: 100%;
     position: relative;
-    height: calc(50px * 0.7);   /* = 2100px */
+    height: calc(500px * 0.7);   /* = 2100px */
     overflow: hidden;
     background-color: rgba(255, 0, 0, 0.2); /* DEBUG: schaalwrapper zichtbaar maken */
 }
@@ -171,8 +171,8 @@ a:active {
 /* Tĳdelĳke debug-kleur: blauwe, 20% doorzichtige achtergrond */
 .container3 {
     position: relative;
-    min-height: 100vh;            /* minimaal 1 schermhoogte */
-    height: auto;                 /* groeit met de inhoud */
+    min-height: 100vh;            /* minimaal één scherm hoog */
+    height: 500vh;                /* tijdelijk vastzetten om de debug-overlay te zien */
     margin: 0;
     padding: 0;
     clear: both;
@@ -248,7 +248,7 @@ a:active {
     margin-top: 3px;
 }
 
-.title,
+.title,fz
 .project-title {
     font-size: 1.5vw;
     font-weight: 700;

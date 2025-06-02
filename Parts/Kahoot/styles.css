@@ -5,218 +5,175 @@
 @import url('https://fonts.googleapis.com/css2?family=Helvetica:wght@700&display=swap');
 
 body {
-    margin: 0;
-    padding: 0;
-    background-color: #1a1a1a;
-    color: white;
-    font-family: 'Helvetica', sans-serif;
-    font-weight: bold;
-    overflow-x: hidden;
+  margin: 0;
+  padding: 20px;
+  background-color: #1a1a1a;
+  color: white;
+  font-family: 'Helvetica', sans-serif;
+  font-weight: bold;
+  overflow-x: hidden;
 }
 
-/*------------------------------*/
-/* Hoofdcontainer voor de pagina*/
-/*------------------------------*/
-
+/* Hoofdcontainer voor inhoud */
 .container {
-    width: 100%;
-    max-width: 900px;        /* Optioneel: nooit breder dan 900px */
-    margin: 0 auto;          /* Centreert de container horizontaal */
-    padding: 0 20px;         /* Eventuele horizontale padding */
-    box-sizing: border-box;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    position: relative;
-    min-height: 100vh;
-    border-radius: 8px;
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 0 20px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  min-height: 100vh;
+  border-radius: 8px;
 }
 
-/*------------------------------*/
-/* Header                       */
-/*------------------------------*/
-
-.header {
-    text-align: center;
-    padding: 50px 0;
-    border-radius: 8px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
-    margin-bottom: 40px;
-}
-
-.header h1 {
-    font-size: 60px;
-    margin-bottom: 20px;
-    color: #fff;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-}
-
-/*------------------------------*/
-/* Section-styling              */
-/*------------------------------*/
-
-.section-content {
-    font-size: 20px;
-    line-height: 1.8;
-    color: #ddd;
-
-    width: 100%;
-    max-width: 1820px;
-    word-wrap: break-word;
-    overflow-y: auto;
-    height: auto;
-
-    /* Voeg links en rechts dezelfde ruimte toe */
-    padding-left: 50px;
-    padding-right: 50px;
+/* Algemene section-styling */
+.section {
+  width: 100%;
+  margin: 40px 0;
+  background: #222;
+  padding: 40px;
+  border-radius: 12px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .section:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.6);
+  transform: translateY(-10px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.6);
 }
 
 .section-title {
-    font-size: 2.5em;
-    margin-bottom: 20px;
-    padding-bottom: 10px;
+  font-size: 2.5em;
+  margin-bottom: 20px;
+  padding-bottom: 10px;
 }
 
-/*------------------------------*/
-/* Inhoud binnen elke section   */
-/*------------------------------*/
-
+/* Content binnen elke section */
 .section-content {
-    font-size: 20px;
-    line-height: 1.8;
-    color: #ddd;
-
-    width: 100%;                  /* Vult 100% van parent (.section) */
-    max-width: 1820px;            /* Optioneel: op grote schermen niet breder dan 1820px */
-    word-wrap: break-word;        /* Lange aaneengesloten woorden mogen breken */
-    overflow-y: auto;             /* Scroll indien de inhoud te hoog is */
-    height: auto;                 /* Hoogte volgt de inhoud */
+  font-size: 20px;
+  line-height: 1.8;
+  color: #ddd;
+  width: 100%;
+  max-width: 1820px;      /* optioneel */
+  word-wrap: break-word;
+  overflow-y: auto;
+  height: auto;
 }
-
-.section {
-    width: 100%;
-    margin: 40px 0;
-    background: #222;
-    /* Maak links en rechts beide 50px: */
-    padding: 40px 50px 40px 50px;
-    border-radius: 12px;
-    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
 
 .section-content ul,
 .section-content ol {
-    margin: 20px 0;
-    padding-left: 20px;
-    color: #bbb;
+  margin: 20px 0;
+  padding-left: 20px;
+  color: #bbb;
 }
 
 .section-content ul li,
 .section-content ol li {
-    margin-bottom: 10px;
+  margin-bottom: 10px;
+}
+
+/* Container voor thumbnails */
+.thumbnail-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}
+
+.thumbnail {
+  width: 300px;
+  max-width: 100%;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+.thumbnail:hover {
+  transform: scale(1.05);
 }
 
 /*------------------------------*/
-/* Bewijsstuk (bijv. PDF-link)  */
+/* Popup-overlay styling        */
 /*------------------------------*/
 
-.download-button {
-    display: inline-block;
-    background-color: #444;
-    color: #fff;
-    padding: 12px 24px;
-    border-radius: 6px;
-    text-decoration: none;
-    font-size: 18px;
-    margin-bottom: 20px;
-    transition: background 0.3s ease;
+#image-popup {
+  display: none;               /* standaard verborgen */
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.85);
+  justify-content: center;     /* horizontaal centreren */
+  align-items: center;         /* verticaal centreren */
+  z-index: 9999 !important;    /* altijd bovenop */
 }
 
-.download-button:hover {
-    background-color: #555;
+.popup-content {
+  position: relative;          /* voor positionering van sluitknop */
 }
 
-/*------------------------------*/
-/* Andere elementen             */
-/*------------------------------*/
-
-.bewijsstuk-image {
-    width: 100%;
-    max-width: 1000px;
-    max-height: 500px;
-    object-fit: cover;
-    border-radius: 8px;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
-    margin-top: 20px;
+#popup-img {
+  max-width: 90vw;             /* maximaal 90% van viewport-breedte */
+  max-height: 90vh;            /* maximaal 90% van viewport-hoogte */
+  border: 4px solid white;
+  border-radius: 12px;
 }
 
-.mia {
-    position: absolute;
-    left: 50%;
-    top: 134px;
-    transform: translateX(-50%);
-    text-align: center;
-    font-size: 16px;
-    font-weight: 700;
-}
-
-.topline {
-    position: absolute;
-    width: 100%;
-    height: 2px;
-    top: 0;
-    background: #c70000;
+.close-btn {
+  position: absolute;
+  top: -10px;
+  right: -10px;
+  background-color: white;
+  color: black;
+  border: none;
+  padding: 6px 12px;
+  font-size: 16px;
+  border-radius: 6px;
+  cursor: pointer;
 }
 
 /*------------------------------*/
-/* Terug-knop onderaan pagina   */
+/* Back-button styling           */
 /*------------------------------*/
 
 .back-button-container {
-    text-align: center;
-    margin-top: 20px;
-    padding: 20px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  text-align: center;
+  margin-top: 20px;
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .back-button {
-    background-color: #222;
-    color: #fff;
-    border: none;
-    padding: 10px 20px;
-    border-radius: 6px;
-    text-decoration: none;
-    font-size: 16px;
-    font-weight: bold;
-    cursor: pointer;
-    transition: background 0.3s ease, transform 0.3s ease;
-    display: inline-block;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  background-color: #222;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 6px;
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.3s ease;
+  display: inline-block;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
 }
-
 .back-button:hover {
-    background-color: #444;
-    transform: scale(1.05);
+  background-color: #444;
+  transform: scale(1.05);
 }
 
-/*------------------------------*/
-/* Link-styling                  */
-/*------------------------------*/
-
+/* Link-styling */
 a,
 a:visited,
 a:hover,
 a:active {
-    color: white !important;
-    text-decoration: underline !important;
+  color: white !important;
+  text-decoration: underline !important;
 }

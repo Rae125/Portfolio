@@ -434,10 +434,10 @@ a:active {
 /*------------------------------*/
 
 .container3 {
-    height: 1080px;
+    height: 100px;
 }
 .scale-wrapper {
-    height: 1000px;
+    height: 100px;
 }
 
 @media (max-width: 1200px) {
@@ -446,6 +446,6 @@ a:active {
     }
 
     .scale-wrapper {
-        height: 2100px;
+        height: 210px;
     }
 }

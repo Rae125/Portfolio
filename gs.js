@@ -178,5 +178,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
 function goHome() {
-    window.location.href = '/Portfolio/'; // Dit stuurt je naar de hoofdpagina
+    const path = window.location.pathname.split('/')[1];
+    window.location.href = `/${path}/`;
 }

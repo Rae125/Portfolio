@@ -446,7 +446,6 @@ a:active {
 }
 .scale-wrapper {
     height: 50000vh;
-    min-height: 5000vh;
 }
 
 @media (max-width: 1200px) {

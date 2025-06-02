@@ -431,21 +431,12 @@ a:active {
 /*------------------------------*/
 /* Scaling (Responsive Design) */
 /*------------------------------*/
-
-.container3 {
-    height: 1080px;
-    width: 100%;
-    padding: 0;
-    box-sizing: border-box;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: relative;
-}
+.container3,
 .scale-wrapper {
     height: 1080px;
     width: 100%;
 }
+
 
 @media (max-width: 1200px) {
     .container3 {

@@ -152,32 +152,32 @@ a:active {
 /* Projecten Sectie             */
 /*------------------------------*/
 
-/* 
-    We willen niet meer dat .scale-wrapper twee keer een hoogte krijgt. 
-    Daarom: één regel voor 70% van 3000px, en overflow:hidden om uit te snijden.
-*/
+/* Tĳdelĳke debug-kleur: rode, 20% doorzichtige achtergrond */
 .scale-wrapper {
     width: 100%;
     position: relative;
     height: calc(3000px * 0.7);   /* = 2100px */
     overflow: hidden;
+    background-color: rgba(255, 0, 0, 0.2); /* DEBUG: schaalwrapper zichtbaar maken */
 }
 
+/* Canvas waarin de content zit */
 .canvas-content {
     position: absolute;
     width: 100%;
     height: 100%;
 }
 
-/* In plaats van “height: 290vh”, zetten we .container3 op auto+min-height */
+/* Tĳdelĳke debug-kleur: blauwe, 20% doorzichtige achtergrond */
 .container3 {
     position: relative;
-    min-height: 100vh;  /* minimaal één schermhoogte */
-    height: auto;       /* groeit met de inhoud */
+    min-height: 100vh;            /* minimaal 1 schermhoogte */
+    height: auto;                 /* groeit met de inhoud */
     margin: 0;
     padding: 0;
     clear: both;
     z-index: 1;
+    background-color: rgba(0, 0, 255, 0.2); /* DEBUG: container3 zichtbaar maken */
 }
 
 .background {
@@ -427,12 +427,6 @@ a:active {
 /* Scaling (Responsive Design)  */
 /*------------------------------*/
 
-/* 
-    De .container3 en .scale-wrapper zijn nu opgeschoond:
-    - .container3 krijgt height:auto + min-height:100vh
-    - .scale-wrapper krijgt height:calc(3000px*0.7) en overflow:hidden
-    Bij kleinere schermen (max-width:1200px) schalen we .container3 naar 70% vanuit linkerbovenhoek.
-*/
 @media (max-width: 1200px) {
     .container3 {
         transform: scale(0.7);

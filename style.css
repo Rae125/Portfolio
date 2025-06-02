@@ -171,7 +171,7 @@ a:active {
 /* Tĳdelĳke debug-kleur: blauwe, 20% doorzichtige achtergrond */
 .container3 {
     position: relative;
-    min-height: 100vh;            /* minimaal 1 schermhoogte */
+    min-height: 75vh;            /* minimaal 1 schermhoogte */
     height: auto;                 /* groeit met de inhoud */
     margin: 0;
     padding: 0;

@@ -57,14 +57,20 @@ body {
 /* Section-styling              */
 /*------------------------------*/
 
-.section {
-    width: 100%;                   /* Vult de volle breedte van .container (of viewport) */
-    margin: 40px 0;
-    background: #222;
-    padding: 40px;
-    border-radius: 12px;
-    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+.section-content {
+    font-size: 20px;
+    line-height: 1.8;
+    color: #ddd;
+
+    width: 100%;
+    max-width: 1820px;
+    word-wrap: break-word;
+    overflow-y: auto;
+    height: auto;
+
+    /* Voeg links en rechts dezelfde ruimte toe */
+    padding-left: 50px;
+    padding-right: 50px;
 }
 
 .section:hover {
@@ -93,6 +99,18 @@ body {
     overflow-y: auto;             /* Scroll indien de inhoud te hoog is */
     height: auto;                 /* Hoogte volgt de inhoud */
 }
+
+.section {
+    width: 100%;
+    margin: 40px 0;
+    background: #222;
+    /* Maak links en rechts beide 50px: */
+    padding: 40px 50px 40px 50px;
+    border-radius: 12px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
 
 .section-content ul,
 .section-content ol {

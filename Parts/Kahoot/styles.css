@@ -5,95 +5,128 @@
 @import url('https://fonts.googleapis.com/css2?family=Helvetica:wght@700&display=swap');
 
 body {
-  margin: 0;
-  padding: 20px;
-  background-color: #1a1a1a;
-  color: white;
-  font-family: 'Helvetica', sans-serif;
-  font-weight: bold;
-  overflow-x: hidden;
+    margin: 0;
+    padding: 0;
+    background-color: #1a1a1a;
+    color: white;
+    font-family: 'Helvetica', sans-serif;
+    font-weight: bold;
+    overflow-x: hidden;
 }
 
-/* Hoofdcontainer voor inhoud */
+/*------------------------------*/
+/* Hoofdcontainer voor de pagina*/
+/*------------------------------*/
+
 .container {
-  width: 100%;
-  max-width: 900px;
-  margin: 0 auto;
-  padding: 0 20px;
-  box-sizing: border-box;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  position: relative;
-  min-height: 100vh;
-  border-radius: 8px;
+    width: 100%;
+    max-width: 900px;       /* Nooit breder dan 900px */
+    margin: 0 auto;         /* Horizontaal centreren */
+    padding: 0 20px;        /* 20px ruimte aan beide kanten */
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    min-height: 100vh;
+    border-radius: 8px;
 }
 
-/* Algemene section-styling */
+/*------------------------------*/
+/* Header                       */
+/*------------------------------*/
+
+.header {
+    text-align: center;
+    padding: 50px 0;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    margin-bottom: 40px;
+}
+
+.header h1 {
+    font-size: 60px;
+    margin-bottom: 20px;
+    color: #fff;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+/*------------------------------*/
+/* Section-styling              */
+/*------------------------------*/
+
 .section {
-  width: 100%;
-  margin: 40px 0;
-  background: #222;
-  padding: 40px;
-  border-radius: 12px;
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+    width: 100%;
+    margin: 40px 0;
+    background: #222;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .section:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.6);
+    transform: translateY(-10px);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.6);
 }
 
 .section-title {
-  font-size: 2.5em;
-  margin-bottom: 20px;
-  padding-bottom: 10px;
+    font-size: 2.5em;
+    margin-bottom: 20px;
+    padding-bottom: 10px;
 }
 
-/* Content binnen elke section */
+/*------------------------------*/
+/* Inhoud binnen elke section   */
+/*------------------------------*/
+
 .section-content {
-  font-size: 20px;
-  line-height: 1.8;
-  color: #ddd;
-  width: 100%;
-  max-width: 1820px;      /* optioneel */
-  word-wrap: break-word;
-  overflow-y: auto;
-  height: auto;
+    font-size: 20px;
+    line-height: 1.8;
+    color: #ddd;
+    width: 100%;            /* Nu 100% in plaats van vaste 1820px */
+    max-width: 1820px;      /* Optioneel: nooit breder dan 1820px op grote schermen */
+    word-wrap: break-word;  /* Breek lange woorden indien nodig */
+    overflow-y: auto;       /* Scroll indien de inhoud hoger is dan container */
+    height: auto;           /* Hoogte volgt inhoud */
 }
 
 .section-content ul,
 .section-content ol {
-  margin: 20px 0;
-  padding-left: 20px;
-  color: #bbb;
+    margin: 20px 0;
+    padding-left: 20px;
+    color: #bbb;
 }
 
 .section-content ul li,
 .section-content ol li {
-  margin-bottom: 10px;
+    margin-bottom: 10px;
 }
 
-/* Container voor thumbnails */
+/*------------------------------*/
+/* Thumbnail-container & afbeeldingen */
+/*------------------------------*/
+
 .thumbnail-container {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 20px;
-  justify-content: center;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
 }
 
 .thumbnail {
-  width: 300px;
-  max-width: 100%;
-  border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-  cursor: pointer;
-  transition: transform 0.2s ease;
+    width: 300px;
+    max-width: 100%;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    cursor: pointer;
+    transition: transform 0.2s ease;
 }
+
 .thumbnail:hover {
-  transform: scale(1.05);
+    transform: scale(1.05);
 }
 
 /*------------------------------*/
@@ -101,40 +134,41 @@ body {
 /*------------------------------*/
 
 #image-popup {
-  display: none;               /* standaard verborgen */
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0,0,0,0.85);
-  justify-content: center;     /* horizontaal centreren */
-  align-items: center;         /* verticaal centreren */
-  z-index: 9999 !important;    /* altijd bovenop */
+    display: none;                 /* Standaard verborgen */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.85);
+    justify-content: center;       /* Horizontaal centreren */
+    align-items: center;           /* Verticaal centreren */
+    z-index: 9999 !important;      /* Zeker bovenop alles */
 }
 
 .popup-content {
-  position: relative;          /* voor positionering van sluitknop */
+    position: relative;            /* Voor positionering van de sluitknop */
 }
 
 #popup-img {
-  max-width: 90vw;             /* maximaal 90% van viewport-breedte */
-  max-height: 90vh;            /* maximaal 90% van viewport-hoogte */
-  border: 4px solid white;
-  border-radius: 12px;
+    max-width: 90vw;               /* Maximaal 90% van viewport-breedte */
+    max-height: 90vh;              /* Maximaal 90% van viewport-hoogte */
+    border: 4px solid white;
+    border-radius: 12px;
+    object-fit: contain;           /* Behoud aspect ratio */
 }
 
 .close-btn {
-  position: absolute;
-  top: -10px;
-  right: -10px;
-  background-color: white;
-  color: black;
-  border: none;
-  padding: 6px 12px;
-  font-size: 16px;
-  border-radius: 6px;
-  cursor: pointer;
+    position: absolute;
+    top: -10px;
+    right: -10px;
+    background-color: white;
+    color: black;
+    border: none;
+    padding: 6px 12px;
+    font-size: 16px;
+    border-radius: 6px;
+    cursor: pointer;
 }
 
 /*------------------------------*/
@@ -142,38 +176,42 @@ body {
 /*------------------------------*/
 
 .back-button-container {
-  text-align: center;
-  margin-top: 20px;
-  padding: 20px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+    text-align: center;
+    margin-top: 20px;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .back-button {
-  background-color: #222;
-  color: #fff;
-  border: none;
-  padding: 10px 20px;
-  border-radius: 6px;
-  text-decoration: none;
-  font-size: 16px;
-  font-weight: bold;
-  cursor: pointer;
-  transition: background 0.3s ease, transform 0.3s ease;
-  display: inline-block;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
-}
-.back-button:hover {
-  background-color: #444;
-  transform: scale(1.05);
+    background-color: #222;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.3s ease;
+    display: inline-block;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
 }
 
-/* Link-styling */
+.back-button:hover {
+    background-color: #444;
+    transform: scale(1.05);
+}
+
+/*------------------------------*/
+/* Link-styling                  */
+/*------------------------------*/
+
 a,
 a:visited,
 a:hover,
 a:active {
-  color: white !important;
-  text-decoration: underline !important;
+    color: white !important;
+    text-decoration: underline !important;
 }

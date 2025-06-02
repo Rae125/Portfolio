@@ -12,12 +12,12 @@ body {
     font-family: 'Helvetica', sans-serif;
     font-weight: bold;
     overflow-x: hidden;
-    overflow-y: auto;
 }
 
 /* Containers */
 .container,
 .container2,
+.container3,
 .container4 {
     width: 100%;
     height: 100%;
@@ -434,22 +434,18 @@ a:active {
 /*------------------------------*/
 
 .container3 {
-    width: 100%;
-    min-height: 100vh; /* Genoeg voor volle schermhoogte */
-    padding: 1000;
-    box-sizing: border-box;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: relative;
+    height: 290vh;
 }
-
 .scale-wrapper {
-    height: auto; /* Laat de content de hoogte bepalen */
+    height: 3000px;
 }
 
 @media (max-width: 1200px) {
     .container3 {
         transform: scale(0.7);
+    }
+
+    .scale-wrapper {
+        height: 2100px;
     }
 }

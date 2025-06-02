@@ -233,7 +233,7 @@ a:active {
     }
 
     .scale-wrapper {
-        height: 2100px;
+        height: 210px;
     }
 }
 
@@ -431,11 +431,18 @@ a:active {
 /*------------------------------*/
 /* Scaling (Responsive Design) */
 /*------------------------------*/
-.container3,
-.scale-wrapper {
-    height: 1080px;
-    width: 100%;
+
+.scale-wrapper,
+.container3 {
+  height: 1080px;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  overflow: hidden; /* voorkomt uitloop */
+  position: relative;
 }
+
 
 
 @media (max-width: 1080px) {

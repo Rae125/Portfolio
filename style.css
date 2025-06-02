@@ -435,11 +435,11 @@ a:active {
 /*------------------------------*/
 
 .container3 {
-    min-height: 400vh;
+    min-height: 100vh;
 }
 .scale-wrapper {
     height: auto;
-    min-height: 400vh;
+    min-height: 100vh;
 }
 
 @media (max-width: 1200px) {

@@ -178,5 +178,5 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
 function goHome() {
-    window.location.href = '/'; // Dit stuurt je naar de hoofdpagina
+    window.location.href = '/mijn-project/'; // Dit stuurt je naar de hoofdpagina
 }

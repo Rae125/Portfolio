@@ -435,7 +435,7 @@ a:active {
 /*------------------------------*/
 
 .container3 {
-    min-height: 100vh;
+    min-height: 50vh;
 }
 .scale-wrapper {
     height: 50vh;

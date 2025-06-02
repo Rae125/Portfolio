@@ -239,7 +239,7 @@ a:active {
 }
 
 .scale-wrapper {
-    height: calc(3000px * 0.7); /* bijv. 2100px voor 70% schaal */
+    height: calc(300px * 0.7); /* bijv. 2100px voor 70% schaal */
 }
 
 /*------------------------------*/

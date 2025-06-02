@@ -445,8 +445,8 @@ a:active {
     position: relative;
 }
 .scale-wrapper {
-    height: 50vh;
-    min-height: 50vh;
+    height: 50000vh;
+    min-height: 5000vh;
 }
 
 @media (max-width: 1200px) {

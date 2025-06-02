@@ -436,7 +436,7 @@ a:active {
 .container3 {
     width: 100%;
     min-height: 100vh; /* Genoeg voor volle schermhoogte */
-    padding: 0;
+    padding: 1000;
     box-sizing: border-box;
     display: flex;
     justify-content: center;

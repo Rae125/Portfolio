@@ -179,5 +179,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
 function goHome() {
     const path = window.location.pathname.split('/')[1];
-    window.location.href = `/${path}/`;
+    window.location.href = '/Portfolio/';
+
 }

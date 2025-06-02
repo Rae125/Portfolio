@@ -439,7 +439,7 @@ a:active {
 }
 .scale-wrapper {
     height: auto;
-    min-height: 100vh;
+    min-height: 400vh;
 }
 
 @media (max-width: 1200px) {

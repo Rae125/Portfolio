@@ -10,6 +10,7 @@ body {
     overflow-x: hidden;
 }
 
+/* Container voor de volledige pagina (centering en max-width) */
 .container {
     width: 100%;
     height: 100%;
@@ -21,11 +22,12 @@ body {
     align-items: center;
     position: relative;
     min-height: 100vh;
-    max-width: 900px;
-    margin: 0 auto;
+    max-width: 900px;     /* indien gewenst: een max-breedte voor .container */
+    margin: 0 auto;       /* centreert .container op grotere schermen */
     border-radius: 8px;
 }
 
+/* Header-styling blijft ongewijzigd */
 .header {
     text-align: center;
     padding: 50px 0;
@@ -33,7 +35,6 @@ body {
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
     margin-bottom: 40px;
 }
-
 .header h1 {
     font-size: 60px;
     margin-bottom: 20px;
@@ -42,6 +43,7 @@ body {
     text-transform: uppercase;
 }
 
+/* Algemeen voor elk section-blok */
 .section {
     margin: 40px 0;
     background: #222;
@@ -49,7 +51,7 @@ body {
     border-radius: 12px;
     box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-    width: 100%;
+    width: 100%;         /* Maak de section altijd 100% van .container breed */
 }
 
 .section:hover {
@@ -60,30 +62,36 @@ body {
 .section-title {
     font-size: 2.5em;
     margin-bottom: 20px;
-
     padding-bottom: 10px;
 }
 
+/* HIER de aanpassing: geen vaste breedte, maar flexibele breedte */
 .section-content {
     font-size: 20px;
     line-height: 1.8;
     color: #ddd;
-    width: 1820px; /* Breedte van het vierkant */
-    height: auto; /* Hoogte van het vierkant */
-    overflow: auto; /* Zorgt ervoor dat je kunt scrollen als de tekst niet past */
+
+    /* Vervang ‘width: 1820px;’ door: */
+    width: 100%;
+    max-width: 1820px; /* optioneel, zodat hij niet breder wordt dan 1820px op zeer grote schermen */
+
+    height: auto;
+    overflow: auto;    /* scroll indien de inhoud hoger is dan de beschikbare ruimte */
 }
 
-
-.section-content ul, .section-content ol {
+/* Voor lijsten binnen section-content */
+.section-content ul,
+.section-content ol {
     margin: 20px 0;
     padding-left: 20px;
     color: #bbb;
 }
-
-.section-content ul li, .section-content ol li {
+.section-content ul li,
+.section-content ol li {
     margin-bottom: 10px;
 }
 
+/* Rest van je styling blijft hetzelfde… */
 .bewijsstuk-image {
     width: 1000px;
     max-height: 500px;
@@ -135,19 +143,16 @@ body {
     display: inline-block;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
 }
-
 .back-button:hover {
     background-color: #222;
     transform: scale(1.05);
 }
 
-
-
 a.download-button:visited {
     color: rgb(255, 255, 255); /* voorkomt paars */
 }
 
-  /* Om er zeker van te zijn dat de pseudo-klassen (zoals hover en visited) ook geen stijl hebben: */
+/* Zorg dat links altijd wit blijven */
 a,
 a:visited,
 a:hover,

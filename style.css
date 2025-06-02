@@ -438,12 +438,7 @@ a:active {
 }
 
 
-@media (max-width: 1200px) {
+@media (max-width: 1080px) {
     .container3 {
         transform: scale(0.7);
     }
-
-    .scale-wrapper {
-        height: 2100px;
-    }
-}

@@ -1,3 +1,7 @@
+/*------------------------------*/
+/* Fonts & Algemene Stijl       */
+/*------------------------------*/
+
 @import url('https://fonts.googleapis.com/css2?family=Helvetica:wght@700&display=swap');
 
 body {
@@ -10,10 +14,15 @@ body {
     overflow-x: hidden;
 }
 
+/*------------------------------*/
+/* Hoofdcontainer voor de pagina*/
+/*------------------------------*/
+
 .container {
     width: 100%;
-    height: 100%;
-    padding: 0;
+    max-width: 900px;        /* Optioneel: nooit breder dan 900px */
+    margin: 0 auto;          /* Centreert de container horizontaal */
+    padding: 0 20px;         /* Eventuele horizontale padding */
     box-sizing: border-box;
     display: flex;
     flex-direction: column;
@@ -21,10 +30,12 @@ body {
     align-items: center;
     position: relative;
     min-height: 100vh;
-    max-width: 900px;
-    margin: 0 auto;
     border-radius: 8px;
 }
+
+/*------------------------------*/
+/* Header                       */
+/*------------------------------*/
 
 .header {
     text-align: center;
@@ -42,14 +53,24 @@ body {
     text-transform: uppercase;
 }
 
-.section {
-    margin: 40px 0;
-    background: #222;
-    padding: 40px;
-    border-radius: 12px;
-    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+/*------------------------------*/
+/* Section-styling              */
+/*------------------------------*/
+
+.section-content {
+    font-size: 20px;
+    line-height: 1.8;
+    color: #ddd;
+
     width: 100%;
+    max-width: 1820px;
+    word-wrap: break-word;
+    overflow-y: auto;
+    height: auto;
+
+    /* Voeg links en rechts dezelfde ruimte toe */
+    padding-left: 50px;
+    padding-right: 50px;
 }
 
 .section:hover {
@@ -60,38 +81,81 @@ body {
 .section-title {
     font-size: 2.5em;
     margin-bottom: 20px;
-
     padding-bottom: 10px;
 }
+
+/*------------------------------*/
+/* Inhoud binnen elke section   */
+/*------------------------------*/
 
 .section-content {
     font-size: 20px;
     line-height: 1.8;
     color: #ddd;
-    width: 1820px; /* Breedte van het vierkant */
-    height: auto; /* Hoogte van het vierkant */
-    overflow: auto; /* Zorgt ervoor dat je kunt scrollen als de tekst niet past */
+
+    width: 100%;                  /* Vult 100% van parent (.section) */
+    max-width: 1820px;            /* Optioneel: op grote schermen niet breder dan 1820px */
+    word-wrap: break-word;        /* Lange aaneengesloten woorden mogen breken */
+    overflow-y: auto;             /* Scroll indien de inhoud te hoog is */
+    height: auto;                 /* Hoogte volgt de inhoud */
+}
+
+.section {
+    width: 100%;
+    margin: 40px 0;
+    background: #222;
+    /* Maak links en rechts beide 50px: */
+    padding: 40px 50px 40px 50px;
+    border-radius: 12px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 
-.section-content ul, .section-content ol {
+.section-content ul,
+.section-content ol {
     margin: 20px 0;
     padding-left: 20px;
     color: #bbb;
 }
 
-.section-content ul li, .section-content ol li {
+.section-content ul li,
+.section-content ol li {
     margin-bottom: 10px;
 }
 
+/*------------------------------*/
+/* Bewijsstuk (bijv. PDF-link)  */
+/*------------------------------*/
+
+.download-button {
+    display: inline-block;
+    background-color: #444;
+    color: #fff;
+    padding: 12px 24px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-size: 18px;
+    margin-bottom: 20px;
+    transition: background 0.3s ease;
+}
+
+.download-button:hover {
+    background-color: #555;
+}
+
+/*------------------------------*/
+/* Andere elementen             */
+/*------------------------------*/
+
 .bewijsstuk-image {
-    width: 1000px;
+    width: 100%;
+    max-width: 1000px;
     max-height: 500px;
     object-fit: cover;
-    border-radius: 12px;
+    border-radius: 8px;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
     margin-top: 20px;
-    border-radius: 8px;
 }
 
 .mia {
@@ -112,8 +176,21 @@ body {
     background: #c70000;
 }
 
+/*------------------------------*/
+/* Terug-knop onderaan pagina   */
+/*------------------------------*/
+
+.back-button-container {
+    text-align: center;
+    margin-top: 20px;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 .back-button {
-    background-color: #222;;
+    background-color: #222;
     color: #fff;
     border: none;
     padding: 10px 20px;
@@ -128,24 +205,18 @@ body {
 }
 
 .back-button:hover {
-    background-color: #222;;
+    background-color: #444;
     transform: scale(1.05);
 }
 
-.back-button-container {
-    text-align: center;
-    margin-top: 1px;
-    padding: 20px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+/*------------------------------*/
+/* Link-styling                  */
+/*------------------------------*/
+
+a,
+a:visited,
+a:hover,
+a:active {
+    color: white !important;
+    text-decoration: underline !important;
 }
-
-
-  /* Om er zeker van te zijn dat de pseudo-klassen (zoals hover en visited) ook geen stijl hebben: */
-  a:visited,
-  a:hover,
-  a:active {
-    color: inherit;
-    text-decoration: none;
-  }
